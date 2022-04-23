@@ -12,7 +12,9 @@ const app = express();
 
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 app.use(express.static("public"));
 
 app.get("/", function(req, res) {
@@ -38,9 +40,12 @@ app.get("/compose", function(req, res) {
 })
 
 app.post("/compose", function(req, res) {
-  console.log(req.body.newPost);
+  const post = {
+    postTitle: req.body.postTitle,
+    postContent: req.body.postContent
+  };
+  res.redirect("/compose")
 })
-
 
 
 
