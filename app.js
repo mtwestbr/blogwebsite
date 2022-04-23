@@ -23,12 +23,12 @@ app.get("/", function(req, res) {
 
 app.get("/about", function(req, res) {
   res.render("about", {
-    contentText: aboutContent,
+    aboutText: aboutContent,
   });
 })
 app.get("/contact", function(req, res) {
   res.render("contact", {
-    contentText: contactContent,
+    contactText: contactContent,
   });
 })
 
